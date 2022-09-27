@@ -1,6 +1,6 @@
 # 2022-sahkokatkot
 
-**Live demo** https://unctad-infovis.github.io/2022-sahkokatkot/
+**Live demo** https://teelmo.github.io/2022-sahkokatkot/
 
 ## Rights of usage
 

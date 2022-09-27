@@ -13,6 +13,7 @@
       display: flex;
       justify-content: space-between;
       margin: auto auto;
+      max-width: 500px;
       padding: 0 0 30px 0;
       position: sticky;
       top: 0;
@@ -50,17 +51,15 @@
     }
     .content_containers {
       height: 100%;
-      margin-top: -10px;
-      margin: auto auto;
+      margin: -10px auto auto auto;
+      max-width: 500px;
       position: relative;
-      .clearfix;
-      .clear_both;
+      overflow: hidden;
       .content_container {
         display: none;
+        padding-right: 10px;
         transition: transform 1s;
         width: 100%;
-        overflow: hidden;
-        padding-right: 10px;
         &.active {
           transition: height 0.35s ease-in-out;
         }

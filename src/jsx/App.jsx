@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/styles.less';
 
+import { v4 as uuidv4 } from 'uuid';
+
 // Load helpers.
 import CSVtoJSON from './helpers/CSVtoJSON.js';
 import slideToggle from './helpers/slideToggle.js';
@@ -18,7 +20,7 @@ function App() {
   }, [dataContent]);
 
   useEffect(() => {
-    const data_file = './assets/data/data.csv';
+    const data_file = (window.location.href.includes('github')) ? './assets/data/data.csv' : './assets/data/data.csv';
     try {
       fetch(data_file)
         .then(response => response.text())
@@ -76,7 +78,13 @@ function App() {
                     <span className="time">{row[0]}</span>
                     <span className="line" />
                   </div>
-                  <div className="text_content">{row[i + 1]}</div>
+                  <div className="text_content">
+                    {
+                      row[i + 1].split('\n\n').map((paragraph) => (
+                        <p key={uuidv4()}>{paragraph}</p>
+                      ))
+                    }
+                  </div>
                 </div>
               ))}
             </div>

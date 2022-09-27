@@ -8,6 +8,7 @@
     "list-some-configs": "yle asu lusi-aws-yle \"aws s3 ls s3://lusi-dataviz-prod/share_configs/\"",
     "list-some-files": "yle asu lusi-aws-yle \"aws s3 ls s3://lusi-dataviz-prod/share/sahkokatkot/\"",
     "start": "webpack serve --open --config webpack.dev.js",
+    "sync-gh-pages": "git subtree push --prefix public origin gh-pages",
     "sync-prod": "npm run build && dataviz-deploy generate --dir public && dataviz-deploy sync lusi 2022-sahkokatkot --folder public",
     "sync-share-config": "cd data && yle asu lusi-aws-yle \"aws s3 sync . s3://lusi-dataviz-prod/share_configs --exclude='*' --include='sahkokatkot.json'\""
   },
@@ -43,5 +44,6 @@
     "webpack-dev-server": "^4.9.2"
   },
   "dependencies": {
+    "uuid": "^9.0.0"
   }
 }

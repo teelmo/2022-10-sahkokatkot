@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="app">
       <div className="container">
-        <h3>Valitse ketä haluat seurata</h3>
+        <h3>Valitse, ketä haluat seurata</h3>
         <div className="selection_containers">
           {dataContent && dataContent[0].map((column, i) => (
             <div key={column} className={`selection_container selection_container_${i} ${(selectedContainer !== i && selectedContainer !== false) ? 'not_selected' : ''}`}>
@@ -80,9 +80,16 @@ function App() {
                   </div>
                   <div className="text_content">
                     {
-                      row[i + 1].split('\n\n').map((paragraph) => (
-                        <p key={uuidv4()}>{paragraph}</p>
-                      ))
+                      row[i + 1].split('\n\n').map((paragraph) => {
+                        paragraph = paragraph.replace(/Sairaaloissa normaalitoiminnot ajetaan varavoiman avulla hallitusti alas. Potilasturvallisuus ei vaarannu. Kiireellistä hoitoa voidaan antaa pitkäänkin./, '<strong>Sairaaloissa</strong> normaalitoiminnot ajetaan varavoiman avulla hallitusti alas. Potilasturvallisuus ei vaarannu. Kiireellistä hoitoa voidaan antaa pitkäänkin.');
+                        paragraph = paragraph.replace(/Kaikki sähköllä kulkeva joukkoliikenne pysähtyy. Kulkuneuvoista poistumisessa ohjeistetaan./, 'Kaikki sähköllä kulkeva <strong>joukkoliikenne</strong> pysähtyy. Kulkuneuvoista poistumisessa ohjeistetaan.');
+                        paragraph = paragraph.replace(/Pankkiautomaatit ja pankkien konttorit menevät kiinni. Maksukortit lakkaavat toimimasta./, '<strong>Pankki</strong>automaatit ja pankkien konttorit menevät kiinni. Maksukortit lakkaavat toimimasta.');
+                        paragraph = paragraph.replace(/Katuvalot ja liikennevalot sammuvat, lähes kaikki huoltoasemat menevät kiinni./, '<strong>Katuvalot ja liikennevalot</strong> sammuvat, lähes kaikki <strong>huoltoasemat</strong> menevät kiinni.');
+                        paragraph = paragraph.replace(/Katuvalot ja liikennevalot sammuvat, lähes kaikki huoltoasemat menevät kiinni./, '<strong>Katuvalot ja liikennevalot</strong> sammuvat, lähes kaikki <strong>huoltoasemat</strong> menevät kiinni.');
+                        paragraph = paragraph.replace(/Emma yllättyy, kun lähellä oleva huoltoasema on auki. Se on yksi Suomen muutamasta kymmenestä huoltoasemasta, joilla on varavoimaa käytössään. Emma saa tankin täyteen./, 'Emma yllättyy, kun lähellä oleva huoltoasema on auki. Se on yksi Suomen <a href="https://yle.fi/uutiset/3-12535915" target="_blank">muutamasta kymmenestä huoltoasemasta</a>, joilla on varavoimaa käytössään. Emma saa tankin täyteen.');
+                        // eslint-disable-next-line
+                        return (<p key={uuidv4()} dangerouslySetInnerHTML={{ __html: paragraph }} />);
+                      })
                     }
                   </div>
                 </div>

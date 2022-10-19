@@ -1,10 +1,10 @@
 {
   "mainfile": "dataviz.html",
   "js": [
-    "js/2022-sahkokatkot.min.js"
+    "js/2022-10-sahkokatkot.min.js"
   ],
   "css": [
-    "css/2022-sahkokatkot.min.css",
+    "css/2022-10-sahkokatkot.min.css",
     "font/fonts.css"
   ],
   "darkMode": false,

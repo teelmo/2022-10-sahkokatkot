@@ -9,7 +9,7 @@ import slideToggle from './helpers/slideToggle.js';
 // import formatNr from './helpers/FormatNr.js';
 // import roundNr from './helpers/RoundNr.js';
 
-// const appID = '#app-root-2022-sahkokatkot';
+// const appID = '#app-root-2022-10-sahkokatkot';
 
 function App() {
   // Data states.

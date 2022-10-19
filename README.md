@@ -1,6 +1,6 @@
-# 2022-sahkokatkot
+# 2022-10-sahkokatkot
 
-**Live demo** https://teelmo.github.io/2022-sahkokatkot/
+**Live demo** https://teelmo.github.io/2022-10-sahkokatkot/
 
 ## Rights of usage
 

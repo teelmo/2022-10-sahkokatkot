@@ -1,5 +1,5 @@
 {
-  "name": "2022-sahkokatkot",
+  "name": "2022-10-sahkokatkot",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
     "list-some-files": "yle asu lusi-aws-yle \"aws s3 ls s3://lusi-dataviz-prod/share/sahkokatkot/\"",
     "start": "webpack serve --open --config webpack.dev.js",
     "sync-gh-pages": "git subtree push --prefix public origin gh-pages",
-    "sync-prod": "npm run build && dataviz-deploy generate --dir public && dataviz-deploy sync lusi 2022-sahkokatkot --folder public",
+    "sync-prod": "npm run build && dataviz-deploy generate --dir public && dataviz-deploy sync lusi 2022-10-sahkokatkot --folder public",
     "sync-share-config": "cd data && yle asu lusi-aws-yle \"aws s3 sync . s3://lusi-dataviz-prod/share_configs --exclude='*' --include='sahkokatkot.json'\""
   },
   "keywords": [],

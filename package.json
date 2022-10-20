@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "list-some-configs": "yle asu lusi-aws-yle \"aws s3 ls s3://lusi-dataviz-prod/share_configs/\"",
     "list-some-files": "yle asu lusi-aws-yle \"aws s3 ls s3://lusi-dataviz-prod/share/sahkokatkot/\"",
     "start": "webpack serve --open --config webpack.dev.js",

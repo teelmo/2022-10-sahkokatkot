@@ -3,11 +3,14 @@ const common = require('./webpack.common.js');
 const name = require('./package.json').name;
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const { DefinePlugin } = require('webpack');
+
+console.log(process.env.NODE_ENV)
 
 module.exports = merge(common, {
   mode:'production',
   optimization: {
-    minimize: true,
+    minimize: false,
     minimizer: [
       new TerserPlugin({
         extractComments: true,
@@ -25,6 +28,8 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }) 
   ]
 });

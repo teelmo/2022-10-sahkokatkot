@@ -3,6 +3,9 @@
 ::after {
   box-sizing: content-box;
 }
+.ydd-article {
+  overflow: auto !important;
+}
 #app-root-2022-10-sahkokatkot .app {
   font-family: Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "yleDataviz": {
+    "darkMode": false,
+    "externalContent": true
+  },
   "scripts": {
     "build": "NODE_ENV=production webpack --config webpack.prod.js",
     "list-some-configs": "yle asu lusi-aws-yle \"aws s3 ls s3://lusi-dataviz-prod/share_configs/\"",
